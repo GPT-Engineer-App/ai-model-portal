@@ -40,7 +40,7 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-800 fade-in">
+        <section className="py-20 bg-gray-800 fade-in" data-animate>
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="opacity-0 translate-y-10 animate-fadeInUp">
               <h3 className="text-3xl font-bold mb-4">Seamless Integration</h3>
@@ -56,7 +56,7 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-20 fade-in">
+        <section className="py-20 fade-in" data-animate>
           <div className="container mx-auto text-center">
             <h3 className="text-3xl font-bold mb-4 opacity-0 translate-y-10 animate-fadeInUp">Open Source</h3>
             <p className="text-xl mb-8 opacity-0 translate-y-10 animate-fadeInUp animation-delay-200">FREE+OPEN is completely open-source. Contribute and help shape the future of AI accessibility.</p>
