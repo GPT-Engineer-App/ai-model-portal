@@ -1,3 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-hero {
+  background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwYWl8ZW58MHx8fHwxNzEyOTU5NjIxfDA&ixlib=rb-4.0.3&q=80&w=1080");
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+}
+
+.hover\:underline-center {
+  display: inline-block;
+  position: relative;
+}
+
+.hover\:underline-center::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #60a5fa;
+  transform-origin: center;
+  transition: transform 0.3s ease-out;
+}
+
+.hover\:underline-center:hover::after {
+  transform: scaleX(1);
+}
+
+.hover\:rotate-360:hover {
+  transform: rotate(360deg);
+}
