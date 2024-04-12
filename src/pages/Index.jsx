@@ -1,6 +1,22 @@
+import { useRef } from "react";
 import { FaRocket, FaCode, FaGithub } from "react-icons/fa";
+import useOnScreen from "../hooks/useOnScreen";
 
 const Index = () => {
+  const ref1 = useRef();
+  const ref2 = useRef();
+  const isVisible1 = useOnScreen(ref1);
+  const isVisible2 = useOnScreen(ref2);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll(".fade-in");
+    sections.forEach((section) => {
+      if (section.classList.contains("is-visible")) {
+        section.classList.add("is-visible");
+      }
+    });
+  }, [isVisible1, isVisible2]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       <header className="py-6">
@@ -40,7 +56,7 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-800 fade-in">
+        <section ref={ref1} className={`py-20 bg-gray-800 fade-in ${isVisible1 ? "is-visible" : ""}`}>
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="opacity-0 translate-y-10 animate-fadeInUp">
               <h3 className="text-3xl font-bold mb-4">Seamless Integration</h3>
@@ -56,7 +72,7 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-20 fade-in">
+        <section ref={ref2} className={`py-20 fade-in ${isVisible2 ? "is-visible" : ""}`}>
           <div className="container mx-auto text-center">
             <h3 className="text-3xl font-bold mb-4 opacity-0 translate-y-10 animate-fadeInUp">Open Source</h3>
             <p className="text-xl mb-8 opacity-0 translate-y-10 animate-fadeInUp animation-delay-200">FREE+OPEN is completely open-source. Contribute and help shape the future of AI accessibility.</p>
